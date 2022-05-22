@@ -13,3 +13,18 @@ jobs:
             cmake -B ./output
             cd output
             make
+        - name: upload artifacts
+          uses: actions/upload-artifact@v3
+          with:
+           name: banking
+           path: |
+            ./banking
+        - name: download artifacts
+          with:
+           name: banking
+           path: ./artifact
+          
+           
+       
+        
+            
