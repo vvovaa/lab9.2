@@ -1,0 +1,15 @@
+name: lab9.2
+
+on:
+  push:
+  
+jobs:
+    work:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - run: |
+            git submodule update --init --recursive
+            cmake -B ./output
+            cd output
+            make
